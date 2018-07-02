@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        link(
+            href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
+            rel="stylesheet"
+        )
+        link(
+        href='assets/style/main.css',
+        rel="stylesheet"
+        )
+        title Title
+    body
+        .container
+            .row
+                .col-12
+                    table.table.time
+                        tbody
+                            tr
+                                th(scope='col') Последнее обновление:
+                                th(scope='col')
+                                    span#today
+                    button.update#update Обновить курс
+            .row
+                .col-12
+                    h1.main-title Конвертер валют
+                    form
+                        .form-group
+                            label(for="input") Сумма
+                            input(
+                                type="text"
+                                placeholder="0.00"
+                                )#input.form-control
+                            //small#emailHelp.form-text.text-muted.
+                            //    Введите сумму
+                        .row
+                            .col-sm-6
+                                .form-group
+                                    label(for="cy") Валюта
+                                    select.form-control#cy
+                            .col-sm-6
+                                .form-group
+                                    label(for="type") Я хочу
+                                    select.form-control#type
+                                        option(value="buy") Продать
+                                        option(value="sale") Купить
+                        .form-group
+                            label(for="result") Результат
+                            input(
+                            type="text"
+                            )#result.form-control
+
+                    p
+                        | Курсы валют ПриватБанка&#32;
+                        a(href='https://api.privatbank.ua/#p24/exchange').
+                            API предоставляет информацию о наличных, безналичных курсах валют ПриватБанка
+
+        script(src="assets/js/main.js")

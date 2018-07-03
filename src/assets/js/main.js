@@ -1,4 +1,7 @@
 
+
+
+window.onload = function () {
 // XMLHttpRequest
 let
     url= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
@@ -7,12 +10,13 @@ let
     cy = document.getElementById("cy"),
     type,
     selected,
-    newDate;
+    newDate,
+    savedCy;
 
 function request() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, false);
-    xhr.send();
+    xhr.send(null);
     if (xhr.status != 200) {
         alert( xhr.status + ': ' + xhr.statusText );
     } else {
@@ -55,28 +59,40 @@ let update = document.getElementById('update');
 let input = document.getElementById('input');
 input.addEventListener('keyup', convert);
 
+input.addEventListener('keyup', function(){
+	 localStorage.input = input.value;
+});
+
 function convert() {
     let result = document.getElementById('result');
     result.value = input.value * list[selected][type] + ' ' + list[selected].base_ccy;
-    // console.log(" selected " + selected + " type " + type);
 }
 
 //  change  and save cy
 
 let selectedCy;
 
-
-
-function saveSelectedCy() {
-    selectedCy = list[selected].ccy;
-    selectedCy = JSON.stringify(selectedCy);
-    localStorage.selectedCy = selectedCy;
+if (localStorage.input){
+	input.value = localStorage.input;
 }
+
+if (localStorage.selectedCy) {
+	savedCy = localStorage.selectedCy.slice(1,-1);
+	localStorage.selectedCy = cy.value = savedCy;
+}
+
+
 
 function cyChange() {
     selected = cy.selectedIndex;
     convert(selected);
     saveSelectedCy();
+}
+
+function saveSelectedCy() {
+    selectedCy = list[selected].ccy;
+    selectedCy = JSON.stringify(selectedCy);
+    localStorage.selectedCy = selectedCy;
 }
 
 cyChange();
@@ -134,11 +150,6 @@ function newTimeOfRequest() {
         newDate.toLocaleDateString();
 }
 
-
-
-
-
-
 function initialCy() {
     let cyLength = cy.options.length;
     for (let i = 0; i < cyLength; i++){
@@ -146,4 +157,5 @@ function initialCy() {
     }
     let localCy = localStorage.getItem(selectedCy);
     console.log(localCy);
+}
 }

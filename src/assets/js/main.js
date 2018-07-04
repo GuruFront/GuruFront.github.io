@@ -1,8 +1,4 @@
-
-
-
 window.onload = function () {
-// XMLHttpRequest
 let
     url= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
     response = '',
@@ -23,13 +19,17 @@ function request() {
         response = xhr.responseText;
     }
 
-    //  JSON.parse + Fill select
+    // JSON.parse
     list = JSON.parse(response);
+    // Set new time
+    newTimeOfRequest();
 
-    if (cy.children.length != 0){
-        cy.innerHTML = '';
-    }
+}
 
+request();
+
+
+(function () {
     for(let item in list ){
 
         let opt = document.createElement('option');
@@ -39,12 +39,8 @@ function request() {
         // }
         cy.appendChild(opt);
     }
+})();
 
-    newTimeOfRequest();
-
-}
-
-request();
 
 // update
 
@@ -114,16 +110,6 @@ cyTypeChange();
 cyType.addEventListener('change', cyTypeChange);
 
 
-// initial CY
-
-// let initialCy = [
-//     {"ccy":"USD","base_ccy":"UAH","buy":"26.05000","sale":"26.30000"},
-//     {"ccy":"EUR","base_ccy":"UAH","buy":"30.20000","sale":"30.70000"},
-//     {"ccy":"RUR","base_ccy":"UAH","buy":"0.40300","sale":"0.42500"},
-//     {"ccy":"BTC","base_ccy":"USD","buy":"6005.7896","sale":"6637.9780"}
-//     ];
-
-
 // Data
 
 
@@ -148,14 +134,5 @@ function newTimeOfRequest() {
         addDateFormat(newDate.getMinutes()) + ':' +
         addDateFormat(newDate.getSeconds()) + ' ' +
         newDate.toLocaleDateString();
-}
-
-function initialCy() {
-    let cyLength = cy.options.length;
-    for (let i = 0; i < cyLength; i++){
-        // cy.options[i].value = i;
-    }
-    let localCy = localStorage.getItem(selectedCy);
-    console.log(localCy);
 }
 }

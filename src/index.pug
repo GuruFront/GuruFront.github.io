@@ -2,6 +2,10 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        )
         link(
             href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
             rel="stylesheet"
@@ -10,7 +14,7 @@ html(lang="en")
         href='assets/style/main.css',
         rel="stylesheet"
         )
-        title Title
+        title Курс ПриватБанка
     body
         .container
             .row
@@ -21,7 +25,10 @@ html(lang="en")
                                 th(scope='col') Последнее обновление:
                                 th(scope='col')
                                     span#today
-                    button.update#update Обновить курс
+                            tr
+                                th(scope='col') Сеть:
+                                th(scope='col')
+                                    div.internet-status#internet-status
             .row
                 .col-12
                     h1.main-title Конвертер валют
@@ -56,4 +63,4 @@ html(lang="en")
                         a(href='https://api.privatbank.ua/#p24/exchange').
                             API предоставляет информацию о наличных, безналичных курсах валют ПриватБанка
 
-        script(src="assets/js/main.js")
+        script(src="js/main.js")

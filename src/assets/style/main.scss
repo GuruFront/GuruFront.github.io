@@ -1,11 +1,21 @@
 .main-title{
- text-align: center;
+  text-align: center;
 }
 
 .update{
- margin-left: 10px;
+  margin-left: 10px;
 }
 
 .time{
- max-width: 400px;
+  max-width: 400px;
+}
+
+.internet-status{
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 100%;
+  &.active{
+    background-color: green;
+  }
 }

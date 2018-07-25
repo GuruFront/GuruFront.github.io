@@ -6,3 +6,11 @@
 
 .time {
   max-width: 400px; }
+
+.internet-status {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 100%; }
+  .internet-status.active {
+    background-color: green; }

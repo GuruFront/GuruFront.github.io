@@ -1,4 +1,4 @@
-var cacheName = 'v1';
+var cacheName = 'v2';
 var cacheFiles = [
     'assets/style/main.css',
     'index.html',

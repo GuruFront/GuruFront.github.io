@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheName = 'v1';
+var cacheName = 'v2';
 var cacheFiles = [
     'assets/style/main.css',
     'index.html',
@@ -55,7 +55,7 @@ self.addEventListener('fetch', function(e){
             return fetch(e.request);
         })
     );
-    
+
     // remove old cache
     caches.keys().then(function(cacheNames) {
         return Promise.all(cacheNames.map(function (thisCacheName) {

@@ -1,7 +1,7 @@
 {
   "name": "Конвертер валют по ПриватБанку",
   "short_name": "Конвертер валют",
-  "start_url": "/src/index.html",
+  "start_url": "index.html",
   "icons": [
     {
       "src": "/assets/icons/icon36.png",

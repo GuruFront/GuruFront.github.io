@@ -63,12 +63,11 @@ function convert() {
         type = cyType.options[cyType.selectedIndex].value,
         selectedCy = cy.value;
     selected = cy.selectedIndex;
-    console.log("input.value" + input.value , "list[selected][type]" + list[selected][type] + 'list[selected].base_ccy' + list[selected].base_ccy);
     result.value = input.value * list[selected][type] + ' ' + selectedCy;
     saveSelectedCy(selectedCy);
 }
 
-function saveSelectedCy() {
+function saveSelectedCy(selectedCy) {
     selectedCy = JSON.stringify(selectedCy);
     localStorage.selectedCy = selectedCy;
 }

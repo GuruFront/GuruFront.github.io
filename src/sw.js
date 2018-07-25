@@ -2,6 +2,7 @@ var cacheName = 'v1';
 var cacheFiles = [
     'assets/style/main.css',
     'index.html',
+    'manifest.json',
     'js/main.js',
     'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
 ];

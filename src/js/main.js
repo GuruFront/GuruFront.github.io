@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('../sw.js', { scope: './' })
+        .register('sw.js', { scope: './' })
         .then(function () {
             console.log("Service Worker Registered");
         })
@@ -23,7 +23,6 @@ window.onload = function() {
         type.innerText = localStorage.typeOfCy;
     }
 };
-
 
 var
     url1= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',

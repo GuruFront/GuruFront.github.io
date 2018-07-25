@@ -90,8 +90,7 @@ function newTimeOfRequest() {
     if (window.navigator.onLine){
         let today    = document.getElementById('today'),
             newDate  = new Date(),
-            now,
-            internetStatus = document.getElementById('internet-status');
+            now;
 
         today.innerText = '00:00:00 00.00.0000';
         today.innerText = now =
@@ -100,6 +99,15 @@ function newTimeOfRequest() {
             addDateFormat(newDate.getSeconds()) + ' ' +
             newDate.toLocaleDateString();
         localStorage.lastTimeOfRequest = now;
-        internetStatus.classList.add("active");
+
     }
 }
+
+setInterval(function () {
+    let internetStatus = document.getElementById('internet-status');
+    if (window.navigator.onLine){
+        internetStatus.classList.add("active");
+    } else {
+        internetStatus.classList.remove("active");
+    }
+}, 1000);

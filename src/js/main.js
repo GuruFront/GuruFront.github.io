@@ -9,27 +9,11 @@ if ('serviceWorker' in navigator) {
         });
 }
 
-window.onload = function() {
-    if (localStorage.selectedCy) {
-        var savedCy = localStorage.selectedCy.slice(1,-1);
-        localStorage.selectedCy = cy.value = savedCy;
-    }
-    if (localStorage.lastTimeOfRequest) {
-        var today = document.getElementById("today");
-        today.innerText = localStorage.lastTimeOfRequest;
-    }
-    if (localStorage.typeOfCy) {
-        var type = document.getElementById("type");
-        type.innerText = localStorage.typeOfCy;
-    }
-};
-
 var
     url1= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
     list,
     input = document.getElementById('input'),
     cy = document.getElementById("cy"),
-    selected,
     cyType = document.getElementById("type");
 
 var get = function(url, callback) {
@@ -61,20 +45,14 @@ function updateList() {
 function convert() {
     let result = document.getElementById('result'),
         type = cyType.options[cyType.selectedIndex].value,
-        selectedCy = cy.value;
     selected = cy.selectedIndex;
-    result.value = input.value * list[selected][type] + ' ' + selectedCy;
+    result.value = input.value * list[selected][type] + ' ' + cy.value;
     saveSelectedCy(selectedCy);
 }
 
-function saveSelectedCy(selectedCy) {
-    selectedCy = JSON.stringify(selectedCy);
-    localStorage.selectedCy = selectedCy;
-}
 cy.addEventListener('change', convert);
 cyType.addEventListener('change', convert);
 input.addEventListener('keyup', convert);
-// Data
 
 
 function addDateFormat(int) {

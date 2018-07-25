@@ -1,3 +1,5 @@
+'use strict';
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('./sw.js', { scope: './' })
@@ -7,6 +9,11 @@ if ('serviceWorker' in navigator) {
         .catch(function(err) {
             console.log("Service Worker Failed to Register" + err);
         });
+}
+
+if (localStorage.lastTimeOfRequest) {
+    var today = document.getElementById("today");
+    today.innerText = localStorage.lastTimeOfRequest;
 }
 
 var

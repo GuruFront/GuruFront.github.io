@@ -4,6 +4,7 @@ var cacheFiles = [
     'index.html',
     'manifest.json',
     'js/main.js',
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
     'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
 ];
 

@@ -25,16 +25,6 @@ self.addEventListener('install', function(e){
 self.addEventListener('activate', function(e){
     console.log("[ServiceWorker] Activated");
 
-    caches.keys().then(function(cacheNames) {
-        return Promise.all(cacheNames.map(function (thisCacheName) {
-            if (thisCacheName !== cacheName) {
-                console.log("[ServiceWorker] removed " + thisCacheName);
-                return caches.delete(thisCacheName)
-            } else {
-                console.log("[ServiceWorker] did not removed" + thisCacheName);
-            }
-        }))
-    });
 });
 
 self.addEventListener('fetch', function(e){
@@ -65,4 +55,17 @@ self.addEventListener('fetch', function(e){
             return fetch(e.request);
         })
     );
+    
+    // remove old cache
+    caches.keys().then(function(cacheNames) {
+        return Promise.all(cacheNames.map(function (thisCacheName) {
+            if (thisCacheName !== cacheName) {
+                console.log("[ServiceWorker] removed " + thisCacheName);
+                return caches.delete(thisCacheName)
+            } else {
+                console.log("[ServiceWorker] did not removed" + thisCacheName);
+            }
+        }))
+    });
+
 });

@@ -103,7 +103,7 @@ sub { font-size:50%;font-weight:bold;background-color:transparent;vertical-align
 .container { margin:0 auto; width: 100%; max-width:1010px; }
 
 .valueProp { text-align:right; font-size:.8em; color:#7cafb2; line-height:1.1em; }
-.header .rightmenu ul li { display:inline; color:#a3a3a3; font-size:.85em; padding:0 1px; }
+.header .rightmenu ul li { color:#a3a3a3; font-size:.85em; padding:0 1px; }
 .header .rightmenu ul li a { text-decoration:none; } /* added link states */
 .header .rightmenu ul li a:active, .header .rightmenu ul li a:hover  { color:#00b9ae;text-decoration:underline; } /* added link states */
 .header .phone { font-size:.9em; color:#000;}

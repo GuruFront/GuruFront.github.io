@@ -1,0 +1,361 @@
+.logo-link{
+    display: inline-block;
+    position: relative;
+    z-index: 21;
+}
+
+.logo{
+    max-width: 100%;
+    height: auto;
+}
+.header .rightmenu {
+    text-align: right;
+    padding-top: 5px;
+}
+
+.global-info{
+    margin-top: 15px;
+}
+
+.header .search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.phone{
+    text-align: right;
+}
+
+
+
+.sub-news{
+    background-color: #ffffff;
+}
+
+.footer{
+    padding-top: 1em;
+}
+.header{
+    padding-bottom: 10px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.fb-iframe{
+    height: 220px;
+    width: 100%;
+}
+
+.main-content img.left {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.card-box{
+    border: 1px solid #cccccc;
+    font-size: 0.9em;
+}
+
+.card-box img{
+    display: block;
+    max-width: 80px;
+    width: 100%;
+    margin: 5px auto;
+    float: none;
+}
+
+.topnav {
+    background: none;
+}
+
+.footer-menu h4{
+    padding-right: 18px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-menu h4:after{
+    content: "";
+    border: 5px solid transparent;
+    border-top: 7px solid #444;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: block;
+}
+
+.footer-menu h4.active:after{
+    border: 5px solid transparent;
+    border-bottom: 7px solid #444;
+    top: 0;
+}
+
+.footer-menu h4.active~.footer-menu__list{
+    display: block;
+}
+
+.footer-menu__list{
+    display: none;
+}
+
+.main-menu {
+    background-color: #ffffff;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    padding-top: 75px;
+    box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0.2);
+}
+
+.main-menu.active{
+    display: block;
+}
+
+.main-menu__btn{
+    width: 25px;
+    float: right;
+    margin-top: 28px;
+    position: relative;
+    z-index: 21;
+    margin-right: 6px;
+    display: block;
+}
+
+
+.main-menu__btn-line:after,
+.main-menu__btn-line:before,
+.main-menu__btn-line{
+    content: "";
+    height: 2px;
+    background-color: #000;
+    display: block;
+    transform-origin: center;
+    transition: transform .3s;
+    transition-timing-function: cubic-bezier(0.04, 0.38, 0.05, 1.38);
+}
+
+
+.main-menu__btn-line{
+    transform: translateY(2px);
+
+}
+
+.main-menu__btn-line:before{
+    transform: translateY(6px);
+}
+
+.main-menu__btn-line:after{
+    transform: translateY(10px);
+}
+
+.main-menu__btn-line.active:before{
+    display: none;
+}
+
+
+.main-menu__btn-line.active:after{
+    transform: rotate(270deg) translateY(0px);
+}
+.main-menu__btn-line.active{
+    transform: rotate(-45deg) translate(-4px,7px);
+}
+
+.main-menu__btn-line.active~.main-menu{
+    display: block;
+}
+
+
+.rightmenu__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.rightmenu__list li:nth-child(even){
+    display: none;
+}
+
+.rightmenu__list li{
+    margin-bottom: 5px;
+}
+
+.topnav__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.topnav__title{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 7px;
+}
+
+.header .phone{
+    text-align: center;
+}
+
+.position-static{
+    position: static!important;
+}
+
+#breadcrumb ul {
+    margin: 10px 0 5px -15px;
+    font-size:.75em;
+}
+
+.global-info{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+img.logo { margin-top: 12px; max-width: 200px;}
+
+#leftnav{
+    margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+    .news-list2 {
+        border-left: 1px solid #666;
+    }
+    .footer-menu__list{
+        display: block;
+    }
+    .footer-menu h4:after{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    #breadcrumb ul {
+        margin: 15px 0 10px;
+    }
+    .main-content {
+        margin:10px 0 40px;
+        background-color:#fff;
+    }
+    #leftnav{
+        margin-bottom: 0;
+    }
+    #ovalfade{
+        background-color: white;
+        box-shadow: 0 -5px 5px 0 rgba(50, 50, 50, 0.3),  0 5px 5px 0 rgba(50, 50, 50, 0.2);
+    }
+    #main {
+        background:#fff url("../img/bg-Top2.png") repeat-x;
+        background-position:  0 50px;
+    }
+    .global-info{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .main-menu__btn{
+        display: none;
+    }
+    img.logo {
+        margin-left: 20px;
+        max-width: 100%;
+    }
+    .header .search {
+        justify-content: flex-end;
+    }
+    .header .phone{
+        text-align: right;
+    }
+    .card-box img{
+        float: left;
+    }
+    .topnav ul li{
+        padding-left: 5px;
+        width: 98px;
+        height: 32px;
+    }
+    .topnav {
+        background:url("../img/topnav-bg.gif") no-repeat right;
+        height:40px;
+        position: static;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .topnav__list {
+        display: flex;
+         flex-direction: row;
+        align-items: center;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .topnav__title{
+        padding-right: 5px;
+        text-align: right;
+        margin-bottom: 0;
+    }
+    .main-menu {
+        background-color:transparent;
+        position: static;
+        width: auto;
+        display: block;
+        padding-top: 0;
+        box-shadow: none;
+    }
+    .main-menu__btn{
+        display: none;
+    }
+    .rightmenu__list {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .rightmenu__list li:nth-child(even){
+        display: inline;
+    }
+    .rightmenu__list li{
+        display: inline-block;
+    }
+}
+
+@media (min-width: 992px){
+    .header{
+        padding-bottom: 0;
+    }
+
+    #ovalfade {
+        background: url("../img/oval2.png") no-repeat top;
+        box-shadow: none
+    }
+    .phone{
+        text-align: left;
+    }
+    .banner img {
+        height: auto;
+        margin: 5px auto;
+    }
+    .search{
+        margin-bottom: 0;
+    }
+    #main{
+        background-position:0 0;
+        z-index: -1;
+    }
+}
+

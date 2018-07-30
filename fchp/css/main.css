@@ -1,3 +1,36 @@
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 6px 8px;
+    border: 1px solid #8a9201;
+    border-radius: 9px;
+    background: #7c8401;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c0cc02), to(#7c8401));
+    background: -moz-linear-gradient(top, #c0cc02, #7c8401);
+    background: linear-gradient(to bottom, #c0cc02, #7c8401);
+    font: normal normal bold 15px arial;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 15px;
+    font-size: inherit;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #a1ab01;
+    background: #c0cc02;
+    background: -webkit-gradient(linear, left top, left bottom, from(#dbdb02), to(#a9b401));
+    background: -moz-linear-gradient(top, #dbdb02, #a9b401);
+    background: linear-gradient(to bottom, #dbdb02, #a9b401);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #7c8401;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c0cc02), to(#7c8401));
+    background: -moz-linear-gradient(top, #c0cc02, #7c8401);
+    background: linear-gradient(to bottom, #c0cc02, #7c8401);
+}
+
 .logo-link{
     display: inline-block;
     position: relative;

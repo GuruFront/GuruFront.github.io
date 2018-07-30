@@ -16,7 +16,7 @@ if (localStorage.lastTimeOfRequest) {
     today.innerText = localStorage.lastTimeOfRequest;
 }
 
-const cyFrom ='UAH';
+var cyFrom ='UAH';
 
 var	
     url1= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',

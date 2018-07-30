@@ -16,7 +16,9 @@ if (localStorage.lastTimeOfRequest) {
     today.innerText = localStorage.lastTimeOfRequest;
 }
 
-var
+const cyFrom ='UAH';
+
+var	
     url1= 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
     list,
     input = document.getElementById('input'),
@@ -45,7 +47,7 @@ function updateList() {
     for(let item in list ){
         let opt = document.createElement('option');
         opt.innerHTML = opt.value = list[item].ccy;
-        cy.appendChild(opt);
+        if ( list[item].ccy !== 'BTC' ) { cy.appendChild(opt);}
     }
 }
 
@@ -53,7 +55,7 @@ function convert() {
     let result = document.getElementById('result'),
         type = cyType.options[cyType.selectedIndex].value,
     selected = cy.selectedIndex;
-    result.value = input.value * list[selected][type] + ' ' + cy.value;
+    result.value = input.value * list[selected][type] + ' ' + cyFrom;
     saveSelectedCy(selectedCy);
 }
 

@@ -13,29 +13,17 @@ body{
     height: 300px;
     border-radius: 100%;
     border: 10px solid #000000;
-    display: flex;
-    justify-content: center;
-}
-
-.clock-body:after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height:10px;
-    background-color: #000000;
-    border-radius: 100%;
 }
 
 .clock-arrow{
     width: 130px;
+    left: 50%;
     height: 2px;
     background-color: #000000;
     position: absolute;
     top: 50%;
-    transform-origin: top;
-    transform: rotate(10deg) translateX(-50%);
+    transform-origin: left;
+    transform: rotate(10deg);
     transition: transform .25s;
     transition-timing-function: cubic-bezier(0, 0.82, 0.45, 1.48)
 }

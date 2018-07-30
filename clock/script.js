@@ -11,9 +11,9 @@
         var min = new Date().getMinutes();
         var sec = new Date().getSeconds();
 
-        arrowHours.style.transform = 'rotate(' + (hours * 30 + 90) + 'deg' + ') translateX(-50%)';
-        arrowMinutes.style.transform = 'rotate(' + (min * 6) + 'deg' + ') translateX(-50%)';
-        arrowSeconds.style.transform = 'rotate(' + (sec * 6) + 'deg' + ') translateX(-50%)';
+        arrowHours.style.transform = 'rotate(' + (hours * 30 + 90) + 'deg' + ')';
+        arrowMinutes.style.transform = 'rotate(' + (min * 6) + 'deg' + ') ';
+        arrowSeconds.style.transform = 'rotate(' + (sec * 6) + 'deg' + ')';
     }, 1000);
 
 })();

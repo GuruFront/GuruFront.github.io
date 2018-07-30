@@ -13,6 +13,7 @@ body{
     height: 300px;
     border-radius: 100%;
     border: 10px solid #000000;
+    position: relative;
 }
 
 .clock-arrow{

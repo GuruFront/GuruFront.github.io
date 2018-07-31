@@ -139,7 +139,6 @@
 }
 
 .main-menu {
-    background-color: #ffffff;
     position: absolute;
     width: 100%;
     top: 0;
@@ -150,8 +149,9 @@
     box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0.2);
 }
 
-.main-menu.active{
+.main-menu__btn.active ~ .main-menu{
     display: block;
+    background-color: #ffffff;
 }
 
 .main-menu__btn{
@@ -230,8 +230,6 @@
     width: 100%;
 }
 
-
-
 .topnav__title{
     display: block;
     text-align: center;
@@ -266,6 +264,23 @@ img.logo { margin-top: 12px; max-width: 200px;}
 }
 
 @media (min-width: 576px) {
+	#breadcrumb{
+	margin-top: 50px;
+}
+	.main-menu{
+		display: block;
+		box-shadow: 0 5px 5px 0 rgba(50, 50, 50, 0);
+	}
+	.main-menu .rightmenu,
+	.main-menu .rightmenu__list,
+	.main-menu .global-info{
+		display: none;
+	}
+	.main-menu__btn.active ~ .rightmenu,
+	.main-menu__btn.active ~ .rightmenu__list,
+	.main-menu__btn.active ~ .global-info{
+		display: block;
+	}
     .news-list2 {
         border-left: 1px solid #666;
     }
@@ -275,9 +290,48 @@ img.logo { margin-top: 12px; max-width: 200px;}
     .footer-menu h4:after{
         display: none;
     }
+    .topnav ul li{
+        padding-left: 5px;
+        width: 98px;
+        height: 32px;
+    }
+    .topnav {
+        background:url("../img/topnav-bg.gif") no-repeat right;
+        height:40px;
+        position: static;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom:10px;
+        margin-right:15px;
+    }
+    .topnav__list {
+        display: flex;
+         flex-direction: row;
+        align-items: center;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .topnav__title{
+        padding-right: 5px;
+        text-align: right;
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: 768px) {
+	#breadcrumb{
+	margin-top: 0;
+}
+	.main-menu .rightmenu,
+	.main-menu .rightmenu__list,
+	.main-menu .global-info{
+		display: block;
+	}
+	.main-menu .global-info{
+		display: flex;
+	}
     #breadcrumb ul {
         margin: 15px 0 10px;
     }
@@ -316,32 +370,7 @@ img.logo { margin-top: 12px; max-width: 200px;}
     .card-box img{
         float: left;
     }
-    .topnav ul li{
-        padding-left: 5px;
-        width: 98px;
-        height: 32px;
-    }
-    .topnav {
-        background:url("../img/topnav-bg.gif") no-repeat right;
-        height:40px;
-        position: static;
-        width: auto;
-        display: flex;
-        justify-content: flex-end;
-    }
-    .topnav__list {
-        display: flex;
-         flex-direction: row;
-        align-items: center;
-        width: auto;
-        justify-content: flex-end;
-    }
-
-    .topnav__title{
-        padding-right: 5px;
-        text-align: right;
-        margin-bottom: 0;
-    }
+    
     .main-menu {
         background-color:transparent;
         position: static;
@@ -349,6 +378,7 @@ img.logo { margin-top: 12px; max-width: 200px;}
         display: block;
         padding-top: 0;
         box-shadow: none;
+       
     }
     .main-menu__btn{
         display: none;

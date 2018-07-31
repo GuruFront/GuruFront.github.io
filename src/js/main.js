@@ -56,7 +56,6 @@ function convert() {
         type = cyType.options[cyType.selectedIndex].value,
     selected = cy.selectedIndex;
     result.value = input.value * list[selected][type] + ' ' + cyFrom;
-    saveSelectedCy(selectedCy);
 }
 
 cy.addEventListener('change', convert);

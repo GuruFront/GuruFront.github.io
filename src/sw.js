@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheName = 'v3';
+var cacheName = 'v4';
 var cacheFiles = [
     'assets/style/main.css',
     'index.html',
@@ -24,6 +24,17 @@ self.addEventListener('install', function(e){
 
 self.addEventListener('activate', function(e){
     console.log("[ServiceWorker] Activated");
+    // remove old cache
+    caches.keys().then(function(cacheNames) {
+        return Promise.all(cacheNames.map(function (thisCacheName) {
+            if (thisCacheName !== cacheName) {
+                console.log("[ServiceWorker] removed " + thisCacheName);
+                return caches.delete(thisCacheName)
+            } else {
+                console.log("[ServiceWorker] did not removed" + thisCacheName);
+            }
+        }))
+    });
 
 });
 
@@ -56,16 +67,6 @@ self.addEventListener('fetch', function(e){
         })
     );
 
-    // remove old cache
-    caches.keys().then(function(cacheNames) {
-        return Promise.all(cacheNames.map(function (thisCacheName) {
-            if (thisCacheName !== cacheName) {
-                console.log("[ServiceWorker] removed " + thisCacheName);
-                return caches.delete(thisCacheName)
-            } else {
-                console.log("[ServiceWorker] did not removed" + thisCacheName);
-            }
-        }))
-    });
+
 
 });

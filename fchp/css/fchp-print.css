@@ -1,6 +1,0 @@
-﻿body { background: white; font-family:Arial,Helvetica,sans-serif; font-size:12pt; }
-.valueProp, .search, .rightmenu, .topnav, #breadcrumb, #section-img, .footer .grid_3, .footer a img, .tools, .tools-more, .banner .grid_3 { display: none; }
-a img { border:none; }
-li.selected a { color:black; font-weight:bold; text-decoration:none; }
-#main { width: auto; margin: 0 5%; padding: 0; border: 0;float: none !important;color: black; background: transparent; }
-.container, .grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, #oval, #ovalfade, .main-content, #section-head, #leftnav, .footer { width: auto; float: none !important;color: black; background: transparent; }
